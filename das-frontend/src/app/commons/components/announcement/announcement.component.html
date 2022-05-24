@@ -1,0 +1,5 @@
+<div *ngFor="let announcement of announcementList; let index = index">
+  <div class="announcement-container" [innerHTML]="announcementList[index]"
+       [ngClass]="index % 2 == 0 ? 'left' : 'right'">
+  </div>
+</div>

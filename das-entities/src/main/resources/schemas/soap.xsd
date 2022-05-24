@@ -1,0 +1,99 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://das.com/soap"
+           targetNamespace="http://das.com/soap" elementFormDefault="qualified">
+
+    <!-- AVAILABILITY -->
+    <xs:element name="getAvailabilityRequest">
+        <xs:complexType/>
+    </xs:element>
+
+    <xs:element name="getAvailabilityResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="serviceAvailability" type="tns:serviceAvailability"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:complexType name="serviceAvailability">
+        <xs:sequence>
+            <xs:element name="status" type="xs:boolean"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <!-- MESSAGES -->
+    <xs:element name="messageRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="messageDto" type="tns:soapMessageDto" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="messageResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="messageDto" type="tns:soapMessageDto" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:complexType name="soapMessageDto">
+        <xs:sequence>
+            <xs:element name="id" type="xs:long" minOccurs="0"/>
+            <xs:element name="assistanceId" type="xs:long" minOccurs="0"/>
+            <xs:element name="userId" type="xs:long" minOccurs="0"/>
+            <xs:element name="entityId" type="xs:long" minOccurs="0"/>
+            <xs:element name="payload" type="xs:string" minOccurs="0"/>
+            <xs:element name="attachment" type="xs:string" minOccurs="0"/>
+            <xs:element name="messageType" type="xs:string" minOccurs="0"/>
+            <xs:element name="timestamp" type="xs:dateTime" minOccurs="0"/>
+            <xs:element name="isFromUser" type="xs:boolean" minOccurs="0"/>
+            <xs:element name="isSynchronized" type="xs:boolean" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <!-- STATS -->
+    <xs:element name="receiveStatsRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="statsDto" type="tns:statDto" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="receiveStatsResponse">
+        <xs:complexType />
+    </xs:element>
+
+    <xs:complexType name="statDto">
+        <xs:sequence>
+            <xs:element name="userId" type="xs:long" minOccurs="0"/>
+            <xs:element name="batchStart" type="xs:dateTime" minOccurs="0"></xs:element>
+            <xs:element name="batchEnd" type="xs:dateTime" minOccurs="0"></xs:element>
+            <xs:element name="openAssistanceCount" type="xs:long" minOccurs="0"></xs:element>
+            <xs:element name="finishedAssistanceCount" type="xs:long" minOccurs="0"></xs:element>
+            <xs:element name="canceledAssistanceCount" type="xs:long" minOccurs="0"></xs:element>
+            <xs:element name="messageCount" type="xs:long" minOccurs="0"></xs:element>
+        </xs:sequence>
+    </xs:complexType>
+
+    <!-- MESSAGES -->
+    <xs:element name="reasonRequest">
+        <xs:complexType/>
+    </xs:element>
+
+    <xs:element name="reasonResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="soapReasonDto" type="tns:soapReasonDto" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:complexType name="soapReasonDto">
+        <xs:sequence>
+            <xs:element name="id" type="xs:long" minOccurs="0"/>
+            <xs:element name="name" type="xs:string" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+</xs:schema>

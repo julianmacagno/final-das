@@ -1,0 +1,7 @@
+<div class="chat-list">
+  <button *ngFor="let chatInterface of getMapValues()" mat-button
+          class="mat-icon" (click)="openChat(chatInterface.currentAssistance!)"
+          [matTooltip]="'CHAT_MANAGER.OPEN_CHAT' | translate: { entityName: chatInterface.currentAssistance?.entityName}">
+    {{getFirstLetter(chatInterface.currentAssistance!)}}
+  </button>
+</div>

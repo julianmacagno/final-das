@@ -1,0 +1,76 @@
+<div class="main-container">
+  <mat-card class="chat-card">
+    <mat-card-title>{{isAssistancePending ? assistanceInterface.entityName : currentChatInterface.currentAssistance?.entityName}}</mat-card-title>
+    <mat-card-subtitle
+      *ngIf="isAssistancePending || currentChatInterface.currentAssistance?.assistanceStatus && assistanceInterface"
+      [ngClass]="isAssistancePending ? '' : 'status_' + currentChatInterface.currentAssistance?.assistanceStatus?.toLowerCase()">
+      <mat-icon>emergency</mat-icon>
+      {{('CHAT.LABEL.' + (isAssistancePending ? 'PENDING' : currentChatInterface.currentAssistance?.assistanceStatus)) | translate}}
+    </mat-card-subtitle>
+    <mat-card-content class="mat-card-content">
+      <div #messageBox class="message-box">
+        <div *ngFor="let messageDto of messageDtoList" class="message">
+          <small class="message-timestamp" [ngClass]="messageDto.isFromUser ? 'own' : 'response'">
+            {{getAssistantFromPayload(messageDto)}}
+          </small>
+          <div *ngIf="canDisplayTextMsg(messageDto)"
+               [ngClass]="messageDto.isFromUser ? 'own-message' : 'response-message'" class="common-message">
+            {{getMessageFromPayload(messageDto)}}
+          </div>
+          <div *ngIf="canDisplayImageMsg(messageDto)"
+               [ngClass]="messageDto.isFromUser ? 'own-message' : 'response-message'" class="common-message">
+            <img src="{{messageDto.attachment}}" alt="" class="message-image">
+          </div>
+          <div *ngIf="canDisplayAudioMsg(messageDto)"
+               [ngClass]="messageDto.isFromUser ? 'own-message' : 'response-message'" class="common-message">
+            <audio controls="controls">
+              <source src="{{messageDto.attachment}}">
+            </audio>
+          </div>
+          <small class="message-timestamp" [ngClass]="messageDto.isFromUser ? 'own' : 'response'">
+            {{getMessageTimestamp(messageDto)}}
+          </small>
+        </div>
+      </div>
+      <div class="input-container">
+        <input matInput [(ngModel)]="message" (keyup.enter)="sendMessageHelper()" class="input-text"
+               *ngIf="valorations.length == 0" [disabled]="isChatDisabled()">
+        <div class="valoration-container" *ngIf="valorations.length > 0">
+          <small>{{'CHAT.LABEL.VALORATION' | translate}}</small>
+          <button mat-button (click)="sendValorationMessage(valoration)" *ngFor="let valoration of valorations" [ngClass]="valoration.positive ? 'positive-val' : 'negative-val'">{{valoration.value}}</button>
+        </div>
+        <label class="label-file-upload" [ngClass]="{'mat-button-disabled': isChatDisabled()}">
+          <mat-icon>image</mat-icon>
+          <input type="file" class="file-upload" (change)="onFileSelected($event)"
+                 accept=".png, .jpg, .jpeg"
+                 [disabled]="isChatDisabled()">
+        </label>
+        <label class="label-audio-recording" [ngClass]="{'mat-button-disabled': isChatDisabled()}">
+          <mat-icon>microphone</mat-icon>
+          <input type="file" class="file-upload" (change)="onFileSelected($event)"
+                 accept="audio/*" capture="microphone"
+                 [disabled]="isChatDisabled()">
+        </label>
+        <button mat-button (click)="sendMessageHelper()" class="send-button"
+                [disabled]="isChatDisabled()">
+          <mat-icon>send</mat-icon>
+        </button>
+        <button mat-button (click)="getReason()" class="cancel-button"
+                [disabled]="isChatDisabled()" *ngIf="!reasonFlag">
+          <mat-icon>cancel</mat-icon>
+        </button>
+        <div *ngIf="reasonFlag && !isChatDisabled()">
+          <mat-icon (click)="changeReasonFlag()" style="cursor: pointer">cancel</mat-icon>
+          <mat-form-field appearance="fill" *ngIf="reasonDtoList.length > 0">
+            <mat-select [(value)]="selectedReason" [disabled]="isChatDisabled()"
+                        [placeholder]="'CHAT.LABEL.SELECT_PLACEHOLDER' | translate">
+              <mat-option *ngFor="let reasonDto of reasonDtoList" (click)="cancelAssistance(reasonDto.name!)">
+                {{('CHAT.LABEL.' + reasonDto.name?.toUpperCase()) | translate}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</div>

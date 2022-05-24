@@ -1,0 +1,172 @@
+$color-primary: #4D004B;
+$color-accent: #910030;
+$color-danger: #DB000F;
+$color-warning: #E89C00;
+$color-success: #A6C700;
+
+
+.main-container {
+  padding: 5px;
+  background-color: #f2f2f2;
+
+  .chat-card {
+    width: 92%;
+    display: flex;
+    flex-direction: column;
+    height: 92%;
+
+    .mat-card-subtitle {
+      margin-bottom: 5px;
+
+      .mat-icon {
+        display: inline-flex;
+        vertical-align: middle;
+        font-size: 20px;
+      }
+    }
+
+    .mat-card-content {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
+      .message-box {
+        margin-bottom: 10px;
+        overflow: auto;
+        border: solid 1px #e7e7e7;
+        border-radius: 5px;
+        height: calc(100vh - 225px);
+        @media screen and (min-height: 1140px) {
+          height: calc(100vh - 270px);
+        }
+        @media screen and (min-height: 1600px) {
+          height: calc(100vh - 295px);
+        }
+
+        .message {
+          display: flex;
+          flex-direction: column;
+
+          .common-message {
+            margin: 5px;
+            padding: 8px;
+            border-radius: 5px;
+            font-size: 14px;
+            max-width: 60%;
+            overflow-wrap: break-word;
+
+            &.own-message {
+              align-self: end;
+              background-color: #e9fba6;
+            }
+
+            &.response-message {
+              align-self: start;
+              background-color: #ffcab1;
+            }
+          }
+
+          .message-image {
+            max-height: 250px;
+            max-width: 250px;
+          }
+
+          .message-timestamp {
+            font-size: 10px;
+            color: #8c8c8c;
+
+            &.own {
+              text-align: right;
+              padding-right: 6px;
+            }
+
+            &.response {
+              text-align: left;
+              padding-left: 6px;
+            }
+          }
+        }
+      }
+
+      .input-container {
+        display: flex;
+        justify-content: space-between;
+
+        .input-text {
+          border-radius: 5px;
+          border: solid 1px #d4d4d4;
+          margin: 0 5px 0 0;
+          padding: 0 10px;
+          flex: 15;
+          font-size: 18px;
+        }
+
+        .valoration-container {
+          margin-right: 5px;
+          flex: 15;
+        }
+
+        button {
+          border-radius: 5px;
+          margin: 0 0 0 5px;
+          padding: 0;
+          flex: 2;
+          height: 42px;
+
+          &.positive-val {
+            background-color: $color-success;
+            color: white;
+          }
+
+          &.negative-val {
+            background-color: $color-danger;
+            color: #fff;
+          }
+
+          &.send-button {
+            background-color: $color-success;
+            color: #fff;
+          }
+
+          &.cancel-button {
+            background-color: $color-danger;
+            color: #fff;
+          }
+        }
+
+        .label-file-upload {
+          padding-top: 10px;
+          border-radius: 5px;
+          margin-right: 5px;
+          width: 42px;
+          height: 32px;
+          text-align: center;
+          color: white;
+          background-color: $color-accent;
+
+          .file-upload {
+            display: none;
+          }
+        }
+
+        .label-audio-recording {
+          padding-top: 10px;
+          border-radius: 5px;
+          width: 42px;
+          height: 32px;
+          text-align: center;
+          color: white;
+          background-color: $color-accent;
+
+          .file-upload {
+            display: none;
+          }
+        }
+
+        .mat-button-disabled {
+          background-color: #bbbbbb !important;
+        }
+      }
+    }
+  }
+}

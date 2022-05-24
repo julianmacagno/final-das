@@ -1,0 +1,84 @@
+---
+version: '3.1'
+
+services:
+  mssql:
+    profiles:
+      - database
+    image: mcr.microsoft.com/azure-sql-edge:latest
+    ports:
+      - 1433:1433
+    environment:
+      - ACCEPT_EULA=Y
+      - SA_PASSWORD=yourStrong(!)Password
+    volumes:
+      - mssql:/var/opt/mssql
+      - ./db:/opt/provision
+
+  police:
+    profiles:
+      - backend
+      - java
+    image: javiroberts/das-entities:latest
+    ports:
+      - 8080:80
+    env_file: env/police.env
+
+  firedept:
+    profiles:
+      - backend
+      - java
+    image: javiroberts/das-entities:latest
+    ports:
+      - 8081:80
+    env_file: env/firedept.env
+
+  ambulance:
+    profiles:
+      - backend
+      - java
+    image: javiroberts/das-entities:latest
+    ports:
+      - 8082:80
+    env_file: env/ambulance.env
+
+  civildef:
+    profiles:
+      - backend
+      - java
+    image: javiroberts/das-entities:latest
+    ports:
+      - 8083:80
+    env_file: env/civildef.env
+
+  muni:
+    profiles:
+      - backend
+      - java
+    image: javiroberts/das-entities:latest
+    ports:
+      - 8084:80
+    env_file: env/muni.env
+
+  rescueapp:
+    profiles:
+      - app
+      - api
+      - java
+    image: javiroberts/das-services:latest
+    ports:
+      - 8000:80
+    env_file: env/rescueapp.env
+
+  frontend:
+    profiles:
+      - app
+      - frontend
+    image: javiroberts/das-frontend:latest
+    ports:
+      - 4200:80
+    volumes:
+      - ./config/nginx/nginx.conf:/etc/nginx/nginx.conf:ro
+
+volumes:
+  mssql:

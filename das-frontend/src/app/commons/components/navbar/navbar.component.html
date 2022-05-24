@@ -1,0 +1,11 @@
+<mat-toolbar color="primary" class="mat-toolbar">
+  <mat-icon>health_and_safety</mat-icon>
+  &nbsp;
+  <div class="brand" (click)="navigateHome()">
+    Rescue App
+  </div>
+  <span class="spacer"></span>
+  <button mat-icon-button *ngIf="validToken()" (click)="logout()">
+    <mat-icon>logout</mat-icon>
+  </button>
+</mat-toolbar>

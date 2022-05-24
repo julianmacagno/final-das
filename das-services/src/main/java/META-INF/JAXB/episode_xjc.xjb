@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<bindings version="2.1" xmlns="http://java.sun.com/xml/ns/jaxb">
+  <!--
+
+Este archivo ha sido generado por la arquitectura JavaTM para la implantación de la referencia de enlace (JAXB) XML v2.3.2 
+Visite <a href="https://javaee.github.io/jaxb-v2/">https://javaee.github.io/jaxb-v2/</a> 
+Todas las modificaciones realizadas en este archivo se perderán si se vuelve a compilar el esquema de origen. 
+Generado el: 2022.05.16 a las 12:49:34 AM ART 
+
+  -->
+  <bindings scd="x-schema::tns" xmlns:tns="http://das.com/soap">
+    <schemaBindings map="false">
+      <package name="com.das.soapconsumer.wsdl"/>
+    </schemaBindings>
+    <bindings scd="tns:getAvailabilityRequest">
+      <class ref="com.das.soapconsumer.wsdl.GetAvailabilityRequest"/>
+    </bindings>
+    <bindings scd="tns:getAvailabilityResponse">
+      <class ref="com.das.soapconsumer.wsdl.GetAvailabilityResponse"/>
+    </bindings>
+    <bindings scd="~tns:serviceAvailability">
+      <class ref="com.das.soapconsumer.wsdl.ServiceAvailability"/>
+    </bindings>
+    <bindings scd="tns:messageRequest">
+      <class ref="com.das.soapconsumer.wsdl.MessageRequest"/>
+    </bindings>
+    <bindings scd="~tns:soapMessageDto">
+      <class ref="com.das.soapconsumer.wsdl.SoapMessageDto"/>
+    </bindings>
+    <bindings scd="tns:messageResponse">
+      <class ref="com.das.soapconsumer.wsdl.MessageResponse"/>
+    </bindings>
+  </bindings>
+  <bindings scd="x-schema::tns" xmlns:tns="http://das.com/soap_auth">
+    <schemaBindings map="false">
+      <package name="com.das.soapconsumer.wsdl"/>
+    </schemaBindings>
+    <bindings scd="tns:doLoginRequest">
+      <class ref="com.das.soapconsumer.wsdl.DoLoginRequest"/>
+    </bindings>
+    <bindings scd="tns:doLoginResponse">
+      <class ref="com.das.soapconsumer.wsdl.DoLoginResponse"/>
+    </bindings>
+  </bindings>
+</bindings>
+

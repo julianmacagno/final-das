@@ -1,0 +1,14 @@
+$color-primary: #4D004B;
+$color-accent: #910030;
+$color-danger: #DB000F;
+$color-warning: #E89C00;
+$color-success: #A6C700;
+
+.spacer {
+  flex: 1 1 auto;
+}
+
+.mat-toolbar.mat-primary {
+  background: $color-primary;
+  color: #fff;
+}

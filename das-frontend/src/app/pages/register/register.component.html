@@ -1,0 +1,49 @@
+<div class="main-container">
+  <mat-card>
+    <mat-card-title>{{'REGISTER.TITLE' | translate}}</mat-card-title>
+    <mat-card-content class="mat-card-content">
+      <form (keyup.enter)="register()" [formGroup]="validationForm">
+        <mat-form-field appearance="fill">
+          <mat-label>{{'REGISTER.FORM.LABELS.CUIL' | translate}}</mat-label>
+          <input matInput formControlName="cuilFormControl" required>
+          <mat-error
+            *ngIf="validationForm.controls.cuilFormControl.invalid">{{getErrorMessage(validationForm.controls.cuilFormControl) | translate}}</mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label>{{'REGISTER.FORM.LABELS.NAME' | translate}}</mat-label>
+          <input matInput formControlName="nameFormControl" required>
+          <mat-error
+            *ngIf="validationForm.controls.nameFormControl.invalid">{{getErrorMessage(validationForm.controls.nameFormControl) | translate}}</mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label>{{'REGISTER.FORM.LABELS.EMAIL' | translate}}</mat-label>
+          <input matInput formControlName="emailFormControl" required>
+          <mat-error
+            *ngIf="validationForm.controls.emailFormControl.invalid">{{getErrorMessage(validationForm.controls.emailFormControl) | translate}}</mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label>{{'REGISTER.FORM.LABELS.REPEAT_EMAIL' | translate}}</mat-label>
+          <input matInput formControlName="repeatEmailFormControl" required>
+          <mat-error
+            *ngIf="validationForm.controls.repeatEmailFormControl.invalid">{{getErrorMessage(validationForm.controls.repeatEmailFormControl) | translate}}</mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label>{{'REGISTER.FORM.LABELS.PASSWORD' | translate}}</mat-label>
+          <input matInput type="password" autocomplete="on" formControlName="passwordFormControl" required>
+          <mat-error
+            *ngIf="validationForm.controls.passwordFormControl.invalid">{{getErrorMessage(validationForm.controls.passwordFormControl) | translate}}</mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label>{{'REGISTER.FORM.LABELS.REPEAT_PASSWORD' | translate}}</mat-label>
+          <input matInput type="password" autocomplete="on" formControlName="repeatPasswordFormControl" required>
+          <mat-error
+            *ngIf="validationForm.controls.repeatPasswordFormControl.invalid">{{getErrorMessage(validationForm.controls.repeatPasswordFormControl) | translate}}</mat-error>
+        </mat-form-field>
+      </form>
+    </mat-card-content>
+    <mat-card-actions class="mat-card-actions">
+      <button mat-button (click)="goToLogin()">{{'REGISTER.FORM.BUTTON.GO_TO_LOGIN' | translate}}</button>
+      <button mat-button (click)="register()">{{'REGISTER.FORM.BUTTON.REGISTER' | translate}}</button>
+    </mat-card-actions>
+  </mat-card>
+</div>

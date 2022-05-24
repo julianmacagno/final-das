@@ -1,0 +1,26 @@
+$color-primary: #4D004B;
+$color-accent: #910030;
+$color-danger: #DB000F;
+$color-warning: #E89C00;
+$color-success: #A6C700;
+
+.chat-list {
+  position: fixed;
+  bottom: 50px;
+  right: 25px;
+  display: flex;
+  flex-direction: column-reverse;
+
+  .mat-icon {
+    font-size: 20px;
+    cursor: pointer;
+    border-radius: 50%;
+    background-color: $color-primary;
+    color: #fff;
+    height: 60px;
+    width: 60px;
+    margin-top: 10px;
+    text-align: center;
+    box-shadow: 0 0 3px gray;
+  }
+}

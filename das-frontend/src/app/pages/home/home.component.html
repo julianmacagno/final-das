@@ -1,0 +1,70 @@
+<div class="main-container">
+  <mat-card class="entities-card card">
+    <mat-card-title>{{'HOME.LABEL.ENTITY' | translate}}</mat-card-title>
+    <mat-card-content class="mat-card-content">
+      <mat-card-subtitle>{{'HOME.LABEL.AVAILABLES' | translate}}</mat-card-subtitle>
+      <mat-card *ngFor="let entityDto of availableEntityDtoList" class="available entities-inner-card">
+        <mat-card-title>
+          {{entityDto.name}}
+        </mat-card-title>
+        <mat-card-content class="mat-card-content">
+          <button mat-raised-button (click)="openChat(entityDto)">
+            {{(getIfAssistanceInProgressForEntity(entityDto) ? 'HOME.BUTTON.CURRENT_ASISTANCE' : 'HOME.BUTTON.REQUEST_ASISTANCE') | translate}}
+          </button>
+        </mat-card-content>
+      </mat-card>
+      <mat-card-subtitle *ngIf="unavailableEntityDtoList.length > 0">
+        {{'HOME.LABEL.NOT_AVAILABLES' | translate}}
+      </mat-card-subtitle>
+      <mat-card *ngFor="let entityDto of unavailableEntityDtoList" class="not-available entities-inner-card">
+        <mat-card-title>
+          {{entityDto.name}}
+        </mat-card-title>
+        <mat-card-content class="mat-card-content">
+          {{'HOME.LABEL.SERVICE_UNAVAILABLE' | translate}} {{entityDto.phone}}
+        </mat-card-content>
+      </mat-card>
+    </mat-card-content>
+  </mat-card>
+
+  <mat-card class="assistance-history-card card">
+    <mat-card-title>{{'HOME.LABEL.ASSISTANCE_HISTORY' | translate}}</mat-card-title>
+    <mat-card-content class="mat-card-content">
+      <table mat-table [dataSource]="assistanceList" class="mat-elevation-z1">
+        <ng-container matColumnDef="id">
+          <th mat-header-cell *matHeaderCellDef>ID</th>
+          <td mat-cell *matCellDef="let assistanceDto">{{assistanceDto.id}}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="entity">
+          <th mat-header-cell *matHeaderCellDef>{{'HOME.LABEL.TABLE.COLUMNS.ENTITY' | translate}}</th>
+          <td mat-cell *matCellDef="let assistanceDto">{{assistanceDto.entityName}}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="timestamp">
+          <th mat-header-cell *matHeaderCellDef>{{'HOME.LABEL.TABLE.COLUMNS.DATE' | translate}}</th>
+          <td mat-cell *matCellDef="let assistanceDto">{{getTimeFromDBTimestamp(assistanceDto.timestamp)}}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="status">
+          <th mat-header-cell *matHeaderCellDef>{{'HOME.LABEL.TABLE.COLUMNS.STATUS' | translate}}</th>
+          <td mat-cell *matCellDef="let assistanceDto"
+              [ngClass]="'status_' + assistanceDto.assistanceStatus.toLowerCase()">
+            <mat-icon>emergency</mat-icon>
+            {{assistanceDto.assistanceStatus}}
+          </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
+    </mat-card-content>
+  </mat-card>
+
+  <mat-card class="announcements-card card">
+    <mat-card-title>{{'HOME.LABEL.ANNOUNCEMENT' | translate}}</mat-card-title>
+    <div class="mat-card-content">
+      <app-announcement></app-announcement>
+    </div>
+  </mat-card>
+</div>

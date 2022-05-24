@@ -1,0 +1,115 @@
+{
+  "LOGIN": {
+    "TITLE": "Login",
+    "FORM": {
+      "LABELS": {
+        "CUIL": "CUIL",
+        "PASSWORD": "Password"
+      },
+      "BUTTON": {
+        "LOGIN": "Login",
+        "REGISTER": "Register"
+      },
+      "ERRORS": {
+        "REQUIRED": "You must enter a value",
+        "INVALID_CUIL": "The inserted CUIL is invalid"
+      }
+    }
+  },
+  "REGISTER": {
+    "TITLE": "Register",
+    "FORM": {
+      "LABELS": {
+        "CUIL": "CUIL",
+        "NAME": "Name",
+        "EMAIL": "Email",
+        "REPEAT_EMAIL": "Repeat email",
+        "PASSWORD": "Password",
+        "REPEAT_PASSWORD": "Repeat password"
+      },
+      "BUTTON": {
+        "REGISTER": "Register",
+        "GO_TO_LOGIN": "Go to login"
+      },
+      "ERRORS": {
+        "REQUIRED": "You must enter a value",
+        "INVALID_CUIL": "The inserted CUIL is invalid",
+        "INVALID_EMAIL": "The inserted email is invalid",
+        "PASSWORD_TOO_SHORT": "The password must be at least 8 characters long",
+        "EMAIL_DIFFERENT": "The password doesn't match",
+        "PASSWORD_DIFFERENT": "The email doesn't match"
+      }
+    },
+    "NOTIFICATION": {
+      "SUCCESS": "User registered successfully. Please, check your email box to validate it"
+    }
+  },
+  "HOME": {
+    "LABEL": {
+      "ENTITY": "Services",
+      "AVAILABLES": "Available",
+      "NOT_AVAILABLES": "Not available",
+      "SERVICE_UNAVAILABLE": "The service is temporarily unavailable. If you need support please call this number: ",
+      "ANNOUNCEMENT": "Announcements",
+      "ASSISTANCE_HISTORY": "Assistance history",
+      "TABLE": {
+        "COLUMNS": {
+          "DATE": "Date",
+          "ENTITY": "Service",
+          "STATUS": "Status"
+        }
+      }
+    },
+    "BUTTON": {
+      "REQUEST_ASISTANCE": "Request asistance",
+      "CURRENT_ASISTANCE": "Assistance in progress"
+    }
+  },
+  "CHAT": {
+    "LABEL": {
+      "IN_PROGRESS": "In progress",
+      "FINALIZED": "Finalized",
+      "CANCELED": "Canceled",
+      "PENDING": "Pending",
+      "POORLY_ATTENDED": "Poorly attended",
+      "ISSUE_ALREADY_SOLVED": "Issue already solved",
+      "TOO_MUCH_WAITING": "Too much waiting",
+      "SELECT_PLACEHOLDER": "Reason",
+      "VALORATION": "Service valoration:"
+    },
+    "NOTIFICATION": {
+      "LOCATION_NOT_PROVIDED": "You must provide a location",
+      "CANCELLATION_WARNING": "Remember you can't cancel more than 3 assistances in 3 months or 6 in 10 months. Otherwise you will be blocked",
+      "ASSISTANCE_FINALIZED": "Your assistance was successfully finalized by the assistance provider"
+    }
+  },
+  "VALIDATE_USER": {
+    "NOTIFICATION": {
+      "SUCCESS": " User validated successfully. You will be redirected in a few seconds"
+    }
+  },
+  "LOCKED_USER": {
+    "BRIEF": "Warning!",
+    "TITLE": "Locked User",
+    "EXPLANATION": "Your user was locked either for canceling 10 asistances in 6 months or 3 in 1 month.",
+    "CONTACT": "Please contact rescueapp.gob@gmail.com"
+  },
+  "CHAT_MANAGER": {
+    "OPEN_CHAT": "Open chat with {{entityName}}"
+  },
+  "SERVER_ERROR": {
+    "USER_NOT_FOUND": "User was not found",
+    "USER_NOT_VALIDATED": "User was not validated",
+    "USER_NOT_AUTHORIZED": "User not authorized",
+    "SENDING_REGISTRATION_EMAIL": "Error at sending registration email",
+    "INSERTING_USER": "Error creating user",
+    "SERVER_ERROR": "The server has encountered an error and could not proceed",
+    "ERROR_INSERTING_ASSISTANCE": "Error creating assistance",
+    "ERROR_INSERTING_MESSAGE": "Error sending message",
+    "ERROR_INSERTING_USER": "Error inserting user",
+    "MESSAGE_NOT_FOUND": "Message not found",
+    "ASSISTANCE_NOT_FOUND": "Assistance could not be found",
+    "USER_LOCKED": "User locked",
+    "SESSION_EXPIRED": "Session has expired, please login again"
+  }
+}

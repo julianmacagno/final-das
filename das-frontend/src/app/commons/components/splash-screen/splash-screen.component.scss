@@ -1,0 +1,48 @@
+$color-primary: #4D004B;
+$color-accent: #910030;
+$color-danger: #DB000F;
+$color-warning: #E89C00;
+$color-success: #A6C700;
+
+.app-splash-screen {
+  background: $color-primary;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  z-index: 100;
+  transition: left 0.5s;
+}
+
+.app-label {
+  margin-top: 32px;
+  color: #fff;
+  font-size: 2.5em;
+  font-weight: 700;
+
+  .mat-icon {
+    font-size: 0.8em;
+    margin-right: 5px;
+  }
+}
+
+.app-splash-inner {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.app-loader {
+  margin-top: 30px;
+}
+
+.app-loader ::ng-deep .mat-progress-spinner circle, .mat-spinner circle {
+  stroke: $color-accent;
+}

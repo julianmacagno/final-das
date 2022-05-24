@@ -1,0 +1,10 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
+                  xmlns:gs="http://das.com/soap_auth">
+    <soapenv:Header/>
+    <soapenv:Body>
+        <gs:doLoginRequest>
+            <gs:username>police</gs:username>
+            <gs:password>password1234</gs:password>
+        </gs:doLoginRequest>
+    </soapenv:Body>
+</soapenv:Envelope>

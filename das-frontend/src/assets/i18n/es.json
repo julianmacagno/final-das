@@ -1,0 +1,115 @@
+{
+  "LOGIN": {
+    "TITLE": "Login",
+    "FORM": {
+      "LABELS": {
+        "CUIL": "CUIL",
+        "PASSWORD": "Contraseña"
+      },
+      "BUTTON": {
+        "LOGIN": "Iniciar sesión",
+        "REGISTER": "Registrarme"
+      },
+      "ERRORS": {
+        "REQUIRED": "Debes ingresar un valor",
+        "INVALID_CUIL": "El CUIL ingresado no es válido"
+      }
+    }
+  },
+  "REGISTER": {
+    "TITLE": "Registrarme",
+    "FORM": {
+      "LABELS": {
+        "CUIL": "CUIL",
+        "NAME": "Nombre",
+        "EMAIL": "Email",
+        "REPEAT_EMAIL": "Repetir email",
+        "PASSWORD": "Contraseña",
+        "REPEAT_PASSWORD": "Repetir contraseña"
+      },
+      "BUTTON": {
+        "REGISTER": "Registrarme",
+        "GO_TO_LOGIN": "Ir al login"
+      },
+      "ERRORS": {
+        "REQUIRED": "Debes ingresar un valor",
+        "INVALID_CUIL": "El CUIL ingresado no es válido",
+        "INVALID_EMAIL": "El email ingresado no es válido",
+        "PASSWORD_TOO_SHORT": "La contraseña debe tener al menos 8 caracteres",
+        "EMAIL_DIFFERENT": "Los emails no coinciden",
+        "PASSWORD_DIFFERENT": "Las contraseñas no coinciden"
+      }
+    },
+    "NOTIFICATION": {
+      "SUCCESS": "Usuario registrado con éxito. Por favor, revise su casilla de email para validarlo"
+    }
+  },
+  "HOME": {
+    "LABEL": {
+      "ENTITY": "Servicios",
+      "AVAILABLES": "Disponibles",
+      "NOT_AVAILABLES": "No disponibles",
+      "SERVICE_UNAVAILABLE": "El servicio está temporalmente fuera de servicio. Si necesita ayuda puede comunicarse a este número: ",
+      "ANNOUNCEMENT": "Noticias",
+      "ASSISTANCE_HISTORY": "Historico de asistencias",
+      "TABLE": {
+        "COLUMNS": {
+          "DATE": "Fecha",
+          "ENTITY": "Servicio",
+          "STATUS": "Estado"
+        }
+      }
+    },
+    "BUTTON": {
+      "REQUEST_ASISTANCE": "Solicitar asistencia",
+      "CURRENT_ASISTANCE": "Asistencia en curso"
+    }
+  },
+  "CHAT": {
+    "LABEL": {
+      "IN_PROGRESS": "En curso",
+      "FINALIZED": "Finalizada",
+      "CANCELED": "Cancelada",
+      "PENDING": "Pendiente",
+      "POORLY_ATTENDED": "Mal atendido",
+      "ISSUE_ALREADY_SOLVED": "Problema ya solucionado",
+      "TOO_MUCH_WAITING": "Demasiada espera",
+      "SELECT_PLACEHOLDER": "Razón",
+      "VALORATION": "Valoracion del servicio:"
+    },
+    "NOTIFICATION": {
+      "LOCATION_NOT_PROVIDED": "Debes proveer una localización",
+      "CANCELLATION_WARNING": "Recuerde que no puede cancelar mas de 3 asistencias en 1 mes o 10 en 6 meses. De lo contrario será bloqueado",
+      "ASSISTANCE_FINALIZED": "La asistencia fue correctamente finalizada por su proveedor de servicio"
+    }
+  },
+  "VALIDATE_USER": {
+    "NOTIFICATION": {
+      "SUCCESS": "Usuario validado con éxito. Será redireccionado en unos segundos"
+    }
+  },
+  "LOCKED_USER": {
+    "BRIEF": "Alerta!",
+    "TITLE": "Usuario Bloqueado",
+    "EXPLANATION": "Su usuario fue bloqueado, por haber cancelado 10 asistencias en 6 meses, o 3 en el ultimo mes.",
+    "CONTACT": "Contáctese con rescueapp.gob@gmail.com si desea desbloquearlo."
+  },
+  "CHAT_MANAGER": {
+    "OPEN_CHAT": "Abrir chat con {{entityName}}"
+  },
+  "SERVER_ERROR": {
+    "USER_NOT_FOUND": "El usuario no se ha encontrado",
+    "USER_NOT_VALIDATED": "El usuario no ha sido validado",
+    "USER_NOT_AUTHORIZED": "El usuario no está autorizado",
+    "SENDING_REGISTRATION_EMAIL": "Error al enviar el email de registro",
+    "INSERTING_USER": "Error al crear el usuario",
+    "SERVER_ERROR": "El servidor se ha encontrado con un problema y no ha podido proceder",
+    "ERROR_INSERTING_ASSISTANCE": "Error al crear asistencia",
+    "ERROR_INSERTING_MESSAGE": "Error al enviar el mensaje",
+    "ERROR_INSERTING_USER": "Error insertando usuario",
+    "MESSAGE_NOT_FOUND": "Mensaje no encontrado",
+    "ASSISTANCE_NOT_FOUND": "No se encontro la asistencia",
+    "USER_LOCKED": "Usuario bloqueado",
+    "SESSION_EXPIRED": "La sesión ha expirado, inicie sesión nuevamente"
+  }
+}

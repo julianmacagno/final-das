@@ -1,0 +1,68 @@
+openapi: 3.0.0
+info:
+  title: Healthcheck example API using Swagger
+  description: To verify the healthcheck status of your application
+  version: 1.0.0
+paths:
+  '/health/ready':
+    get:
+      summary: Readiness
+      description: For readiness probe
+      operationId: 'healthReady'
+      responses:
+        "200":
+          description: Readiness
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Health"
+        "503":
+          description: Unhealthy Service
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Health"
+  '/health/live':
+    get:
+      summary: Liveness
+      description: For Liveness probe
+      operationId: 'healthLive'
+      responses:
+        "200":
+          description: Liveness
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Health"
+        "503":
+          description: Unhealthy Service
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Health"
+components:
+  schemas:
+    Info:
+      required:
+        - groupId
+        - artifactId
+        - versionId
+      properties:
+        groupId:
+          type: string
+          description: A string describing the groupId
+        artifactId:
+          type: string
+          description: A string describing the artifactId
+        versionId:
+          type: string
+          description: A string describing the version
+    Health:
+      required:
+        - info
+      properties:
+        info:
+          $ref: "#/components/schemas/Info"
+        messaggio:
+          type: string
+          description: A string for an information message

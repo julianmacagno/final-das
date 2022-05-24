@@ -1,0 +1,75 @@
+$color-primary: #4D004B;
+$color-accent: #910030;
+$color-danger: #DB000F;
+$color-warning: #E89C00;
+$color-success: #A6C700;
+
+.main-container {
+  justify-content: start;
+  padding-top: 20px;
+
+  .card {
+    margin-bottom: 40px;
+    width: 80%;
+  }
+
+  .entities-card {
+
+    .mat-card-subtitle {
+      margin-top: 5px;
+      margin-bottom: 5px;
+    }
+
+    .entities-inner-card {
+      margin-bottom: 15px;
+
+      mat-card-title {
+        margin-bottom: 0;
+        margin-top: 8px;
+      }
+    }
+
+    .available {
+      background-color: $color-success;
+      color: white;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .not-available {
+      background-color: $color-danger;
+      color: white;
+
+      .mat-card-content {
+        font-size: 14px;
+      }
+    }
+  }
+
+  .assistance-history-card {
+
+    .mat-card-title {
+      margin-bottom: 20px;
+    }
+
+    .mat-card-content {
+      table {
+        width: 100%;
+        background: none;
+
+        .mat-icon {
+          font-size: 20px;
+          vertical-align: middle;
+        }
+      }
+    }
+  }
+
+  .announcements-card {
+
+    .mat-card-content {
+      padding-left: 25px;
+      padding-right: 25px;
+    }
+  }
+}

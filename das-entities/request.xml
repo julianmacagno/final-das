@@ -1,0 +1,8 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
+                  xmlns:gs="http://das.com/soap">
+    <soapenv:Header/>
+    <soapenv:Body>
+        <gs:getAvailabilityRequest>
+        </gs:getAvailabilityRequest>
+    </soapenv:Body>
+</soapenv:Envelope>

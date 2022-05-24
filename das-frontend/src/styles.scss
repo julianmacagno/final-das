@@ -1,0 +1,134 @@
+/* You can add global styles to this file, and also import other style files */
+
+$color-primary: #4D004B;
+$color-accent: #910030;
+$color-danger: #DB000F;
+$color-warning: #E89C00;
+$color-success: #A6C700;
+
+html, body {
+  height: 100%;
+  background-color: #f2f2f2;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.snackbar-success {
+  background-color: $color-success;
+  color: white;
+  font-weight: bold;
+}
+
+.snackbar-error {
+  background-color: $color-danger;
+  color: white;
+  font-weight: bold;
+}
+
+.snackbar-warn {
+  background-color: $color-warning;
+  color: rgb(67, 67, 67);
+  font-weight: bold;
+}
+
+.main-container {
+  height: calc(100vh - 55px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.mat-card .mat-divider-horizontal {
+  position: relative !important;
+}
+
+// Announcements
+.announcement-container {
+  margin-top: 20px;
+
+  p {
+    margin: 0;
+  }
+
+  .article-date {
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 1;
+    margin-bottom: 10px;
+    color: gray;
+  }
+
+  .announcement-header {
+    margin-bottom: 10px;
+
+    .article-title {
+      font-size: 24px;
+      font-weight: 500;
+      line-height: 1.2;
+    }
+  }
+
+  .announcement-body {
+
+    .article-subtitle {
+      font-size: 18px;
+      font-weight: 400;
+      line-height: 1;
+      margin-bottom: 20px;
+    }
+
+    .image {
+      margin: auto;
+
+      img {
+        max-width: 80%;
+        border-radius: 8px;
+      }
+    }
+
+    .image-subtitle {
+      font-weight: 500;
+      font-size: 11px;
+      margin-bottom: 20px;
+    }
+
+    .paragraph {
+      font-size: 14px;
+      font-weight: 400;
+      padding-bottom: 15px;
+      line-height: 1.6;
+      margin: auto;
+    }
+  }
+}
+
+.mat-dialog-container {
+  padding: 0 !important;
+}
+
+.status_in_progress {
+  color: $color-warning;
+}
+
+.status_finalized {
+  color: $color-success;
+}
+
+.status_canceled {
+  color: $color-danger;
+}
+
+.mat-form-field-flex {
+  padding: 0 15px 0 15px !important;
+  margin-left: 5px;
+  color: black;
+}
+
+.mat-select-placeholder {
+  color: black;
+  font-width: 500;
+}
